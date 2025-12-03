@@ -1,0 +1,23 @@
+.reveal {
+  opacity: 0;
+  transition: all 0.7s ease-out;
+}
+
+/* Efectos iniciales */
+.reveal-fade {
+  transform: translateY(20px);
+}
+
+.reveal-slide {
+  transform: translateX(-40px);
+}
+
+.reveal-zoom {
+  transform: scale(0.8);
+}
+
+/* Cuando es visible */
+.reveal-visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
+}

@@ -8,16 +8,13 @@ export default function Gallery() {
         <h1 className="gallery-title">Galería Futurista</h1>
       </ScrollReveal>
 
-      <ScrollReveal>
-        <div className="gallery-grid">
-          <div className="gal-item"></div>
-          <div className="gal-item"></div>
-          <div className="gal-item"></div>
-          <div className="gal-item"></div>
-          <div className="gal-item"></div>
-          <div className="gal-item"></div>
-        </div>
-      </ScrollReveal>
+      <div className="gallery-grid">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <ScrollReveal key={i} effect="fade">
+            <div className="gal-item"></div>
+          </ScrollReveal>
+        ))}
+      </div>
     </div>
   );
 }
