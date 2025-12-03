@@ -1,54 +1,69 @@
 .contact-container {
-  min-height: 80vh;
-  padding: 60px 20px;
+  height: 100vh;        /* Ocupa toda la altura del viewport */
+  width: 100vw;         /* Ocupa todo el ancho del viewport */
+  padding: 80px 5%;     /* Ajusta padding horizontal */
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* Contenido empieza desde arriba */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.contact-title {
   text-align: center;
-  animation: fadeIn 0.8s ease;
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsivo */
+  margin-bottom: 50px;
 }
 
-.contact-container h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
-  color: #0ff;
-  text-shadow: 0 0 10px #0ff;
-}
-
-.contact-container p {
+.contact-form {
   max-width: 600px;
-  margin-bottom: 30px;
-  font-size: 1.1rem;
-  color: #ddd;
-}
-
-.contact-box {
-  background: rgba(0, 255, 255, 0.05);
-  padding: 25px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 255, 255, 0.2);
   width: 100%;
-  max-width: 550px;
-  animation: glowIn 1s ease;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.contact-item {
-  margin: 10px 0;
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  background: #0066ff;
+  padding: 14px;
   font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.contact-item span {
-  color: #0ff;
-  font-weight: bold;
+.contact-form button:hover {
+  background: #004ecc;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* Responsivo para tablets y móviles */
+@media (max-width: 900px) {
+  .contact-container {
+    padding: 60px 5%;
+  }
 
-@keyframes glowIn {
-  from { opacity: 0; box-shadow: none; }
-  to { opacity: 1; box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+  .contact-form {
+    width: 100%;
+  }
 }

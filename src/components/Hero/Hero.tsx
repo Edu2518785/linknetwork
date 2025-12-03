@@ -4,21 +4,15 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-
-        <h1 className="hero-title">
-          Conectividad del Futuro con <span>LinkNetwork</span>
-        </h1>
-
-        <p className="hero-subtitle">
-          Internet dedicado, infraestructura moderna y soluciones inteligentes para tu empresa.
+        <h1 className="hero-title">Internet Empresarial de Alta Velocidad</h1>
+        <p className="hero-text">
+          Conectividad segura, estable y diseñada para el crecimiento de tu empresa.
         </p>
 
         <button className="hero-btn">Contáctanos</button>
-
       </div>
 
-      <div className="hero-bg-lights"></div>
-      <div className="hero-grid"></div>
+      <div className="hero-overlay" />
     </section>
   );
 }

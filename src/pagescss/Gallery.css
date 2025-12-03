@@ -1,47 +1,64 @@
 .gallery-container {
-  padding: 60px 20px;
-  min-height: 80vh;
-  text-align: center;
-  animation: fadeIn 0.8s ease;
+  height: 100vh;        /* Ocupa toda la altura del viewport */
+  width: 100vw;         /* Ocupa todo el ancho del viewport */
+  padding: 80px 5%;     /* Ajusta padding horizontal */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Contenido empieza desde arriba */
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-.gallery-container h1 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  color: #0ff;
-  text-shadow: 0 0 10px #0ff;
+.gallery-title {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsivo */
+  margin-bottom: 50px;
 }
 
 .gallery-grid {
-  margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  animation: rise 1s ease;
-}
-
-.gallery-item {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
   width: 100%;
-  height: 180px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.gal-item {
+  height: 200px;
   border-radius: 12px;
-  background-size: cover;
-  background-position: center;
-  background-color: #111;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(0, 255, 255, 0.2);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 115, 255, 0.5),
+    rgba(255, 122, 0, 0.5)
+  );
+  animation: galleryFade 6s infinite alternate;
+  box-sizing: border-box;
 }
 
-.gallery-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+@keyframes galleryFade {
+  from {
+    filter: brightness(0.8);
+  }
+  to {
+    filter: brightness(1.3);
+  }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* Responsivo para tablets y móviles */
+@media (max-width: 900px) {
+  .gallery-container {
+    padding: 60px 5%;
+  }
 
-@keyframes rise {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+  }
+
+  .gal-item {
+    height: 180px; /* Ajusta altura en móviles */
+  }
 }

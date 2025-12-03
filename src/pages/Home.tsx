@@ -2,21 +2,25 @@ import "../pagescss/Home.css";
 
 export default function Home() {
   return (
-    <div className="home-hero">
+    <section className="home-hero">
+
+      {/* LUCES FUTURISTAS */}
+      <div className="light light1"></div>
+      <div className="light light2"></div>
+      <div className="light light3"></div>
+
       <div className="home-content">
         <h1 className="home-title">
-          Conectividad <span className="accent">LinkNetwork</span>
+          Bienvenido a <span className="accent">LinkNetwork</span>
         </h1>
 
         <p className="home-subtitle">
-          Internet dedicado, soluciones empresariales y tecnología con un
-          estilo futurista inspirado en interfaces avanzadas.
+          Infraestructura digital avanzada, conectividad inteligente y
+          soluciones empresariales de alto rendimiento.
         </p>
 
-        <button className="hero-btn">Más Información</button>
+        <button className="hero-btn">Conoce nuestros servicios</button>
       </div>
-
-      <div className="home-lights" />
-    </div>
+    </section>
   );
 }

@@ -1,25 +1,76 @@
 .services-container {
-  padding: 40px;
+  height: 100vh;        /* Ocupa toda la altura del viewport */
+  width: 100vw;         /* Ocupa todo el ancho del viewport */
+  padding: 80px 5%;     /* Ajusta padding horizontal */
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Contenido empieza desde arriba */
+  box-sizing: border-box;
+  overflow-x: hidden;   /* Evita scroll horizontal por el glow */
+}
+
+.services-bg-glow {
+  position: absolute;
+  left: -200px;          /* Más grande para llenar pantalla */
+  top: -100px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255, 122, 0, 0.4), transparent);
+  filter: blur(120px);
+  z-index: -1;
+  animation: rotate-glow 10s infinite linear;
+}
+
+@keyframes rotate-glow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.services-title {
   text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsivo */
+  margin-bottom: 50px;
 }
 
 .services-grid {
-  margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.service-card {
-  padding: 20px;
+.service-item {
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  background: #ffffff10;
-  backdrop-filter: blur(6px);
-  border: 1px solid #ffffff30;
+  border: 1px solid rgba(0, 102, 255, 0.3);
+  backdrop-filter: blur(10px);
   transition: 0.3s;
+  box-sizing: border-box;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+.service-item:hover {
+  transform: translateY(-6px);
+  border-color: #ff7a00;
+}
+
+/* Responsivo para tablets y móviles */
+@media (max-width: 900px) {
+  .services-container {
+    padding: 60px 5%;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+  }
 }

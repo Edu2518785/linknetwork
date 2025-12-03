@@ -1,15 +1,22 @@
+import ScrollReveal from "../components/Effects/ScrollReveal";
 import "../pagescss/Contact.css";
+
 export default function Contact() {
   return (
-    <div className="page contact-page">
-      <h1>Contáctenos</h1>
-      <p>Estamos aquí para ayudarte. Escríbenos o llámanos en cualquier momento.</p>
+    <div className="contact-container">
+      <ScrollReveal>
+        <h1 className="contact-title">Contáctanos</h1>
+      </ScrollReveal>
 
-      <div className="contact-info">
-        <p><strong>Teléfono:</strong> +51 999 999 999</p>
-        <p><strong>Email:</strong> info@linknetwork.com</p>
-        <p><strong>Dirección:</strong> Lima, Perú</p>
-      </div>
+      <ScrollReveal>
+        <form className="contact-form">
+          <input type="text" placeholder="Nombre completo" />
+          <input type="email" placeholder="Correo electrónico" />
+          <input type="text" placeholder="Asunto" />
+          <textarea placeholder="Mensaje"></textarea>
+          <button>Enviar Mensaje</button>
+        </form>
+      </ScrollReveal>
     </div>
   );
 }

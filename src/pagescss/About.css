@@ -1,16 +1,87 @@
 .about-container {
-  padding: 80px 20px;
+  height: 100vh;         /* Ocupa toda la altura del viewport */
+  width: 100vw;          /* Ocupa todo el ancho del viewport */
+  padding: 80px 5%;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Contenido empieza desde arriba */
+  box-sizing: border-box;
+  overflow-x: hidden;    /* Evita scroll horizontal por el glow */
+}
+
+.about-hero-glow {
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(0, 115, 255, 0.4), transparent);
+  filter: blur(150px);
+  z-index: -1;
+  animation: glow-move 6s infinite alternate;
+}
+
+@keyframes glow-move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(60px);
+  }
+}
+
+.about-title {
   text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 50px;
 }
 
-.about-container h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.about-container p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto;
+.about-text {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
   line-height: 1.6;
+}
+
+.about-cards {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 95%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 102, 255, 0.3);
+  padding: 25px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  transition: 0.4s;
+  box-sizing: border-box;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  border-color: #ff7a00;
+}
+
+@media (max-width: 900px) {
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-container {
+    padding: 60px 5%;
+  }
 }

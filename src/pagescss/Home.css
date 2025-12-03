@@ -1,6 +1,117 @@
+/* ===========================
+   SECCIÓN HERO PRINCIPAL
+=========================== */
 .home-hero {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(0, 68, 255, 0.4), rgba(255, 115, 0, 0.4)),
+    url("/src/assets/tech-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ===========================
+   LUCES ESTILO TONY STARK
+=========================== */
+.light {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.6;
+  animation: float 8s infinite alternate ease-in-out;
+}
+
+/* luz azul */
+.light1 {
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 140, 255, 0.7);
+  top: -80px;
+  left: -60px;
+}
+
+/* luz naranja */
+.light2 {
+  width: 450px;
+  height: 450px;
+  background: rgba(255, 115, 0, 0.7);
+  bottom: -100px;
+  right: -50px;
+}
+
+/* luz turquesa */
+.light3 {
+  width: 380px;
+  height: 380px;
+  background: rgba(0, 255, 230, 0.5);
+  top: 40%;
+  left: 60%;
+}
+
+@keyframes float {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25) rotate(8deg);
+  }
+}
+
+/* ===========================
+   CONTENIDO HERO
+=========================== */
+.home-content {
+  text-align: center;
+  z-index: 5;
+  padding: 20px;
+}
+
+.home-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.accent {
+  color: #ff7a00;
+}
+
+.home-subtitle {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BOTÓN HERO */
+.hero-btn {
+  margin-top: 30px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #0057ff;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #003bb8;
+  transform: scale(1.05);
+}
+.home-hero {
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(
       135deg,
       rgba(0, 68, 255, 0.5),
@@ -9,75 +120,11 @@
     url("/src/assets/tech-bg.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-}
-
-/* Glow futurista estilo Tony Stark */
-.home-lights {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(
-    circle,
-    rgba(0, 140, 255, 0.6),
-    transparent 70%
-  );
-  filter: blur(80px);
-  animation: pulse 6s infinite alternate;
-}
-
-@keyframes pulse {
-  from {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  to {
-    transform: scale(1.3);
-    opacity: 0.9;
-  }
-}
-
-.home-content {
-  text-align: center;
-  max-width: 800px;
-  padding: 20px;
-  z-index: 5;
-}
-
-.home-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.accent {
-  color: #ff7a00; /* naranja corporativo */
-}
-
-.home-subtitle {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  opacity: 0.9;
-}
-
-.hero-btn {
-  margin-top: 30px;
-  padding: 14px 32px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #0057ff;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.hero-btn:hover {
-  background-color: #003bb8;
-  transform: scale(1.05);
 }

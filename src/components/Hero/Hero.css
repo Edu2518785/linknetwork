@@ -1,122 +1,58 @@
 .hero {
-  position: relative;
   width: 100%;
-  height: 85vh;
-  background: linear-gradient(135deg, #001F3F, #0056B3);
+  height: 80vh;
+  background: linear-gradient(
+      rgba(0, 40, 85, 0.6),
+      rgba(0, 40, 85, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31");
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
-  justify-content: center;
   color: white;
-  overflow: hidden;
-  padding: 0 40px;
+  padding: 0 5%;
+  position: relative;
 }
 
-/* --- TEXTO --- */
 .hero-content {
-  text-align: center;
-  z-index: 3;
-  max-width: 800px;
+  max-width: 600px;
+  z-index: 5;
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 800;
-  line-height: 1.2;
-  animation: fadeInDown 1s ease forwards;
+  margin-bottom: 15px;
+  color: white;
 }
 
-.hero-title span {
-  color: #FF7A00; /* naranja */
-}
-
-.hero-subtitle {
-  margin-top: 20px;
+.hero-text {
   font-size: 1.3rem;
-  opacity: 0.9;
-  animation: fadeInUp 1s ease forwards;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  color: #f1f1f1;
 }
 
 .hero-btn {
-  margin-top: 35px;
-  padding: 14px 34px;
+  padding: 12px 25px;
   font-size: 1.1rem;
-  background: #FF7A00;
-  color: white;
+  background-color: #ff7a00; /* Naranja */
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
+  color: white;
   transition: 0.3s ease;
 }
 
 .hero-btn:hover {
-  background: #ff8f2b;
-  transform: scale(1.05);
+  background-color: #ff9d38;
+  transform: translateY(-3px);
 }
 
-/* --- ANIMACIONES DE TEXTO --- */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* --- EFECTO GRID FUTURISTA --- */
-.hero-grid {
+.hero-overlay {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
-  background-size: 40px 40px;
-  z-index: 1;
-  animation: moveGrid 15s linear infinite;
-}
-
-@keyframes moveGrid {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(40px);
-  }
-}
-
-/* --- LUCES DE FONDO --- */
-.hero-bg-lights {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255,122,0,0.4), transparent 70%);
-  top: -100px;
-  right: -150px;
-  filter: blur(60px);
-  z-index: 0;
-  animation: pulse 6s infinite ease-in-out;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.9;
-  }
+  background: radial-gradient(circle at bottom right, #007bff44, transparent 70%);
+  pointer-events: none;
 }
