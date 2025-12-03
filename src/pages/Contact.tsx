@@ -17,6 +17,31 @@ export default function Contact() {
           <button>Enviar Mensaje</button>
         </form>
       </ScrollReveal>
+
+      <ScrollReveal effect="fade">
+        <div className="contact-info">
+          <p>📞 Teléfono: +51 938 000 000</p>
+          <p>✉️ Email: contacto@linknetwork.com</p>
+          <p>🌍 Ubicación: Lima, Perú</p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal effect="fade">
+        <div className="contact-hours">
+          <p>Horario: Lunes a Viernes 9:00-18:00</p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal effect="fade">
+        <div className="contact-links">
+          <p>Redes: Facebook | Twitter | Instagram</p>
+          <p>Enlaces útiles: FAQ, Blog, Servicios</p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal effect="fade">
+        <button className="hero-btn">Agendar cita</button>
+      </ScrollReveal>
     </div>
   );
 }
